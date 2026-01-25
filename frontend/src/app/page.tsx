@@ -1,7 +1,5 @@
-export default function Home() {
+export default function HomePage() {
 	return (
-		<div className="">
-			DB
-		</div>
+		<h1>Halaman Beranda</h1>
 	);
 }
