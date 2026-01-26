@@ -1,4 +1,4 @@
-import { Profil, ProfilPejabat, Berita, UMKM, Galeri, Kontak, Aspirasi, StatistikKategori, StatistikItem, Role, Admin, AdminLog, Kelembagaan } from '@/types';
+import { Profil, ProfilPejabat, Berita, UMKM, Galeri, Kontak, Aspirasi, StatistikKategori, StatistikItem, Role, Admin, AdminLog, Kelembagaan, Potensi, PotensiGambar  } from '@/types';
 
 export const mockProfil: Profil[] = [
 	{
@@ -36,7 +36,7 @@ export const mockProfil: Profil[] = [
 		created_at: new Date('2024-01-03'),
 		updated_at: new Date('2024-01-03'),
 		admin_id: '1'
-	}
+	},
 ];
 
 export const mockProfilPejabat: ProfilPejabat[] = [
@@ -95,11 +95,119 @@ export const mockKelembagaan: Kelembagaan[] = [
 	}
 ];
 
+export const mockPotensi: Potensi[] = [
+	{
+		id: 'pot-umkm',
+		kategori: 'umkm',
+		nama: 'UMKM & Kerajinan',
+		slug: 'umkm-kerajinan',
+		icon: 'Store',
+		konten:
+			'Potensi UMKM di kelurahan meliputi kerajinan tangan, olahan rumahan, dan usaha jasa. Dukungan pengembangan dapat dilakukan melalui pelatihan, pendampingan pemasaran, serta fasilitasi legalitas.',
+		created_at: new Date('2024-01-05'),
+		updated_at: new Date('2024-01-05'),
+		admin_id: '1'
+	},
+	{
+		id: 'pot-pertanian',
+		kategori: 'pertanian',
+		nama: 'Pertanian & Kebun',
+		slug: 'pertanian-kebun',
+		icon: 'Sprout',
+		konten:
+			'Potensi pertanian dan kebun warga dapat dikembangkan melalui budidaya komoditas unggulan, pemanfaatan pekarangan, serta penguatan rantai distribusi hasil panen.',
+		created_at: new Date('2024-01-06'),
+		updated_at: new Date('2024-01-06'),
+		admin_id: '1'
+	},
+	{
+		id: 'pot-perikanan',
+		kategori: 'perikanan',
+		nama: 'Perikanan & Hasil Laut',
+		slug: 'perikanan-hasil-laut',
+		icon: 'Fish',
+		konten:
+			'Potensi perikanan mencakup hasil tangkap dan olahan hasil laut. Pengembangan dapat diarahkan pada peningkatan kualitas produk, pengemasan, dan akses pasar.',
+		created_at: new Date('2024-01-07'),
+		updated_at: new Date('2024-01-07'),
+		admin_id: '1'
+	},
+	{
+		id: 'pot-wisata',
+		kategori: 'wisata',
+		nama: 'Wisata & Ruang Publik',
+		slug: 'wisata-ruang-publik',
+		icon: 'MapPinned',
+		konten:
+			'Potensi wisata dan ruang publik dapat dikembangkan melalui penataan kawasan, penyediaan informasi, kebersihan lingkungan, serta promosi kegiatan lokal.',
+		created_at: new Date('2024-01-08'),
+		updated_at: new Date('2024-01-08'),
+		admin_id: '1'
+	},
+	{
+		id: 'pot-kuliner',
+		kategori: 'kuliner',
+		nama: 'Kuliner Lokal',
+		slug: 'kuliner-lokal',
+		icon: 'UtensilsCrossed',
+		konten:
+			'Kuliner lokal memiliki daya tarik kuat. Penguatan dapat dilakukan lewat standarisasi kualitas, inovasi menu, dan promosi melalui media sosial.',
+		created_at: new Date('2024-01-09'),
+		updated_at: new Date('2024-01-09'),
+		admin_id: '1'
+	},
+	{
+		id: 'pot-sdm',
+		kategori: 'sdm',
+		nama: 'SDM & Komunitas',
+		slug: 'sdm-komunitas',
+		icon: 'Users',
+		konten:
+			'SDM produktif dan komunitas aktif menjadi kekuatan sosial. Pengembangan dapat dilakukan melalui program pelatihan, kegiatan kepemudaan, dan kolaborasi lintas komunitas.',
+		created_at: new Date('2024-01-10'),
+		updated_at: new Date('2024-01-10'),
+		admin_id: '1'
+	}
+];
+
+export const mockPotensiGambar: PotensiGambar[] = [
+	{
+		id: 'potg-1',
+		potensi_id: 'pot-umkm',
+		url: 'https://picsum.photos/1200/800?random=61',
+		caption: 'Produk UMKM warga',
+		order_index: 1,
+		created_at: new Date('2024-01-05'),
+		updated_at: new Date('2024-01-05'),
+		admin_id: '1'
+	},
+	{
+		id: 'potg-2',
+		potensi_id: 'pot-umkm',
+		url: 'https://picsum.photos/1200/800?random=62',
+		caption: 'Kegiatan pelatihan',
+		order_index: 2,
+		created_at: new Date('2024-01-05'),
+		updated_at: new Date('2024-01-05'),
+		admin_id: '1'
+	},
+	{
+		id: 'potg-3',
+		potensi_id: 'pot-wisata',
+		url: 'https://picsum.photos/1200/800?random=63',
+		caption: 'Ruang publik',
+		order_index: 1,
+		created_at: new Date('2024-01-08'),
+		updated_at: new Date('2024-01-08'),
+		admin_id: '1'
+	}
+];
+
 export const mockBerita: Berita[] = [
 	{
 		id: '1',
 		judul: 'Peluncuran Program Baru untuk UMKM',
-		konten: 'Pemerintah meluncurkan program baru untuk mendukung UMKM lokal...',
+		konten: 'Pemerintah meluncurkan program baru untuk mendukung UMKM lokal melalui pendampingan usaha, pelatihan, dan akses pemasaran.',
 		gambar_url: 'https://picsum.photos/800/600?random=4',
 		gambar_size: 170000,
 		gambar_type: 'image/jpeg',
@@ -114,7 +222,7 @@ export const mockBerita: Berita[] = [
 	{
 		id: '2',
 		judul: 'Pengumuman: Libur Nasional',
-		konten: 'Diberitahukan bahwa kantor akan tutup pada tanggal...',
+		konten: 'Diberitahukan bahwa kantor kelurahan tutup pada tanggal yang ditetapkan sebagai libur nasional. Pelayanan kembali normal pada hari kerja berikutnya.',
 		gambar_url: 'https://picsum.photos/800/600?random=5',
 		gambar_size: 140000,
 		gambar_type: 'image/jpeg',
@@ -124,6 +232,126 @@ export const mockBerita: Berita[] = [
 		slug: 'pengumuman-libur-nasional',
 		created_at: new Date('2024-01-20'),
 		updated_at: new Date('2024-01-20'),
+		admin_id: '1'
+	},
+	{
+		id: '3',
+		judul: 'Gotong Royong Bersih Lingkungan RW 02',
+		konten: 'Kegiatan gotong royong dilaksanakan bersama warga untuk membersihkan drainase dan area publik. Terima kasih atas partisipasi semua pihak.',
+		gambar_url: 'https://picsum.photos/800/600?random=11',
+		gambar_size: 165000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-01-18'),
+		penulis: 'Admin',
+		kategori: 'berita',
+		slug: 'gotong-royong-bersih-lingkungan-rw-02',
+		created_at: new Date('2024-01-18'),
+		updated_at: new Date('2024-01-18'),
+		admin_id: '1'
+	},
+	{
+		id: '4',
+		judul: 'Pengumuman: Jadwal Posyandu Bulan Januari',
+		konten: 'Posyandu dilaksanakan sesuai jadwal yang telah ditentukan. Warga diharapkan membawa buku KIA/KMS dan datang sesuai jam layanan.',
+		gambar_url: 'https://picsum.photos/800/600?random=12',
+		gambar_size: 150000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-01-19'),
+		penulis: 'Admin',
+		kategori: 'pengumuman',
+		slug: 'pengumuman-jadwal-posyandu-januari',
+		created_at: new Date('2024-01-19'),
+		updated_at: new Date('2024-01-19'),
+		admin_id: '1'
+	},
+	{
+		id: '5',
+		judul: 'Pelatihan Digital Marketing untuk Pelaku UMKM',
+		konten: 'Pelatihan membahas strategi promosi online, pembuatan konten, dan optimalisasi media sosial untuk meningkatkan penjualan.',
+		gambar_url: 'https://picsum.photos/800/600?random=13',
+		gambar_size: 175000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-01-25'),
+		penulis: 'Admin',
+		kategori: 'berita',
+		slug: 'pelatihan-digital-marketing-untuk-pelaku-umkm',
+		created_at: new Date('2024-01-25'),
+		updated_at: new Date('2024-01-25'),
+		admin_id: '1'
+	},
+	{
+		id: '6',
+		judul: 'Pengumuman: Perubahan Jam Pelayanan Kantor',
+		konten: 'Mulai minggu ini, jam pelayanan administrasi mengalami penyesuaian. Silakan cek informasi jam terbaru pada bagian kontak.',
+		gambar_url: 'https://picsum.photos/800/600?random=14',
+		gambar_size: 160000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-01-26'),
+		penulis: 'Admin',
+		kategori: 'pengumuman',
+		slug: 'pengumuman-perubahan-jam-pelayanan-kantor',
+		created_at: new Date('2024-01-26'),
+		updated_at: new Date('2024-01-26'),
+		admin_id: '1'
+	},
+	{
+		id: '7',
+		judul: 'Sosialisasi Administrasi Kependudukan di Balai Warga',
+		konten: 'Sosialisasi membahas layanan administrasi kependudukan seperti KK, KTP, akta kelahiran, serta alur pengurusan yang benar.',
+		gambar_url: 'https://picsum.photos/800/600?random=15',
+		gambar_size: 168000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-02-02'),
+		penulis: 'Admin',
+		kategori: 'berita',
+		slug: 'sosialisasi-administrasi-kependudukan-di-balai-warga',
+		created_at: new Date('2024-02-02'),
+		updated_at: new Date('2024-02-02'),
+		admin_id: '1'
+	},
+	{
+		id: '8',
+		judul: 'Pengumuman: Penutupan Sementara Layanan pada Hari Rapat',
+		konten: 'Sehubungan dengan agenda rapat koordinasi, layanan administrasi ditutup sementara pada jam tertentu. Mohon pengertiannya.',
+		gambar_url: 'https://picsum.photos/800/600?random=16',
+		gambar_size: 155000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-02-05'),
+		penulis: 'Admin',
+		kategori: 'pengumuman',
+		slug: 'pengumuman-penutupan-sementara-layanan-hari-rapat',
+		created_at: new Date('2024-02-05'),
+		updated_at: new Date('2024-02-05'),
+		admin_id: '1'
+	},
+	{
+		id: '9',
+		judul: 'Program Bank Sampah: Setor Sampah Jadi Tabungan',
+		konten: 'Warga dapat menyetor sampah anorganik terpilah untuk ditimbang dan dicatat sebagai tabungan. Jadwal setor rutin diumumkan berkala.',
+		gambar_url: 'https://picsum.photos/800/600?random=17',
+		gambar_size: 172000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-02-10'),
+		penulis: 'Admin',
+		kategori: 'berita',
+		slug: 'program-bank-sampah-setor-sampah-jadi-tabungan',
+		created_at: new Date('2024-02-10'),
+		updated_at: new Date('2024-02-10'),
+		admin_id: '1'
+	},
+	{
+		id: '10',
+		judul: 'Pengumuman: Verifikasi Data Warga',
+		konten: 'Warga diminta melakukan verifikasi data untuk pembaruan administrasi. Siapkan dokumen pendukung sesuai kebutuhan.',
+		gambar_url: 'https://picsum.photos/800/600?random=18',
+		gambar_size: 150000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-02-12'),
+		penulis: 'Admin',
+		kategori: 'pengumuman',
+		slug: 'pengumuman-verifikasi-data-warga',
+		created_at: new Date('2024-02-12'),
+		updated_at: new Date('2024-02-12'),
 		admin_id: '1'
 	}
 ];
@@ -169,23 +397,166 @@ export const mockGaleri: Galeri[] = [
 	{
 		id: '1',
 		judul: 'Kunjungan Menteri',
-		deskripsi: 'Kunjungan Menteri ke kantor kami',
-		gambar_url: 'https://picsum.photos/800/600?random=8',
+		deskripsi: 'Kunjungan Menteri ke kantor kelurahan',
+		gambar_url: 'https://picsum.photos/800/600?random=1',
 		gambar_size: 175000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-01-05'),
+		updated_at: new Date('2024-01-05'),
+		admin_id: '1'
+	},
+	{
+		id: '2',
+		judul: 'Pelatihan UMKM',
+		deskripsi: 'Pelatihan pengembangan usaha untuk UMKM lokal',
+		gambar_url: 'https://picsum.photos/800/600?random=2',
+		gambar_size: 165000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-01-08'),
+		updated_at: new Date('2024-01-08'),
+		admin_id: '1'
+	},
+	{
+		id: '3',
+		judul: 'Gotong Royong Warga',
+		deskripsi: 'Kegiatan gotong royong membersihkan lingkungan',
+		gambar_url: 'https://picsum.photos/800/600?random=3',
+		gambar_size: 168000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-01-10'),
+		updated_at: new Date('2024-01-10'),
+		admin_id: '1'
+	},
+	{
+		id: '4',
+		judul: 'Musyawarah Kelurahan',
+		deskripsi: 'Rapat koordinasi bersama tokoh masyarakat',
+		gambar_url: 'https://picsum.photos/800/600?random=4',
+		gambar_size: 170000,
 		gambar_type: 'image/jpeg',
 		created_at: new Date('2024-01-12'),
 		updated_at: new Date('2024-01-12'),
 		admin_id: '1'
 	},
 	{
-		id: '2',
-		judul: 'Pelatihan UMKM',
-		deskripsi: 'Pelatihan pengembangan usaha untuk UMKM',
-		gambar_url: 'https://picsum.photos/800/600?random=9',
-		gambar_size: 165000,
+		id: '5',
+		judul: 'Perayaan HUT RI',
+		deskripsi: 'Lomba dan kegiatan 17 Agustus',
+		gambar_url: 'https://picsum.photos/800/600?random=5',
+		gambar_size: 180000,
 		gambar_type: 'image/jpeg',
-		created_at: new Date('2024-01-13'),
-		updated_at: new Date('2024-01-13'),
+		created_at: new Date('2024-01-15'),
+		updated_at: new Date('2024-01-15'),
+		admin_id: '1'
+	},
+	{
+		id: '6',
+		judul: 'Vaksinasi Massal',
+		deskripsi: 'Program vaksinasi untuk warga',
+		gambar_url: 'https://picsum.photos/800/600?random=6',
+		gambar_size: 172000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-01-18'),
+		updated_at: new Date('2024-01-18'),
+		admin_id: '1'
+	},
+	{
+		id: '7',
+		judul: 'Sosialisasi Administrasi',
+		deskripsi: 'Sosialisasi layanan administrasi kependudukan',
+		gambar_url: 'https://picsum.photos/800/600?random=7',
+		gambar_size: 169000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-01-20'),
+		updated_at: new Date('2024-01-20'),
+		admin_id: '1'
+	},
+	{
+		id: '8',
+		judul: 'Bimbingan Teknis RT/RW',
+		deskripsi: 'Pelatihan administrasi RT dan RW',
+		gambar_url: 'https://picsum.photos/800/600?random=8',
+		gambar_size: 174000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-01-22'),
+		updated_at: new Date('2024-01-22'),
+		admin_id: '1'
+	},
+	{
+		id: '9',
+		judul: 'Penyaluran Bantuan Sosial',
+		deskripsi: 'Penyaluran bantuan kepada warga kurang mampu',
+		gambar_url: 'https://picsum.photos/800/600?random=9',
+		gambar_size: 176000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-01-25'),
+		updated_at: new Date('2024-01-25'),
+		admin_id: '1'
+	},
+	{
+		id: '10',
+		judul: 'Kerja Bakti Drainase',
+		deskripsi: 'Pembersihan saluran air lingkungan',
+		gambar_url: 'https://picsum.photos/800/600?random=10',
+		gambar_size: 171000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-01-28'),
+		updated_at: new Date('2024-01-28'),
+		admin_id: '1'
+	},
+	{
+		id: '11',
+		judul: 'Pelatihan Digital Marketing',
+		deskripsi: 'Pelatihan pemasaran digital untuk pelaku UMKM',
+		gambar_url: 'https://picsum.photos/800/600?random=11',
+		gambar_size: 178000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-02-01'),
+		updated_at: new Date('2024-02-01'),
+		admin_id: '1'
+	},
+	{
+		id: '12',
+		judul: 'Lomba Kebersihan Lingkungan',
+		deskripsi: 'Penilaian kebersihan antar RT',
+		gambar_url: 'https://picsum.photos/800/600?random=12',
+		gambar_size: 173000,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-02-05'),
+		updated_at: new Date('2024-02-05'),
+		admin_id: '1'
+	},
+	{
+		id: '13',
+		judul: 'Rapat Evaluasi Program',
+		deskripsi: 'Evaluasi program kerja kelurahan',
+		gambar_url: 'https://picsum.photos/800/600?random=13',
+		gambar_size: 170500,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-02-08'),
+		updated_at: new Date('2024-02-08'),
+		admin_id: '1'
+	},
+	{
+		id: '14',
+		judul: 'Kegiatan PKK',
+		deskripsi: 'Pemberdayaan dan pembinaan keluarga',
+		gambar_url: 'https://picsum.photos/800/600?random=14',
+		gambar_size: 168500,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-02-12'),
+		updated_at: new Date('2024-02-12'),
+		admin_id: '1'
+	},
+	{
+		id: '15',
+		judul: 'Senam Bersama Warga',
+		deskripsi: 'Kegiatan senam pagi bersama warga',
+		gambar_url: 'https://picsum.photos/800/600?random=15',
+		gambar_size: 172500,
+		gambar_type: 'image/jpeg',
+		created_at: new Date('2024-02-15'),
+		updated_at: new Date('2024-02-15'),
 		admin_id: '1'
 	}
 ];
@@ -246,17 +617,25 @@ export const mockStatistikKategori: StatistikKategori[] = [
 		created_at: new Date('2024-01-01'),
 		updated_at: new Date('2024-01-01'),
 		admin_id: '1'
+	},
+	{
+		id: '3',
+		nama: 'Batas Wilayah',
+		tahun: 2024,
+		sumber: 'Internal',
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
 	}
 ];
 
 export const mockStatistikItem: StatistikItem[] = [
 	{
-		id: '1',
+		id: 'bps-1',
 		kategori_id: '1',
 		key: 'jumlah_penduduk',
 		label: 'Jumlah Penduduk',
 		value_number: 2500000,
-		value_text: undefined,
 		unit: 'jiwa',
 		order_index: 1,
 		created_at: new Date('2024-01-01'),
@@ -264,14 +643,105 @@ export const mockStatistikItem: StatistikItem[] = [
 		admin_id: '1'
 	},
 	{
-		id: '2',
+		id: 'bps-2',
 		kategori_id: '1',
 		key: 'luas_wilayah',
 		label: 'Luas Wilayah',
 		value_number: 150.5,
-		value_text: undefined,
 		unit: 'km²',
 		order_index: 2,
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
+	},
+	{
+		id: 'umum-1',
+		kategori_id: '2',
+		key: 'luas_wilayah',
+		label: 'Luas Wilayah',
+		value_number: 488,
+		unit: 'km²',
+		order_index: 1,
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
+	},
+	{
+		id: 'umum-2',
+		kategori_id: '2',
+		key: 'jumlah_penduduk',
+		label: 'Jumlah Penduduk',
+		value_number: 10146,
+		unit: 'jiwa',
+		order_index: 2,
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
+	},
+	{
+		id: 'umum-3',
+		kategori_id: '2',
+		key: 'jumlah_rt',
+		label: 'Jumlah RT',
+		value_number: 19,
+		unit: 'RT',
+		order_index: 3,
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
+	},
+	{
+		id: 'umum-4',
+		kategori_id: '2',
+		key: 'jumlah_rw',
+		label: 'Jumlah RW',
+		value_number: 9,
+		unit: 'RW',
+		order_index: 4,
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
+	},
+	{
+		id: 'batas-1',
+		kategori_id: '3',
+		key: 'sebelah_utara',
+		label: 'Sebelah Utara',
+		value_text: 'Kelurahan Sumpang Minangae',
+		order_index: 1,
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
+	},
+	{
+		id: 'batas-2',
+		kategori_id: '3',
+		key: 'sebelah_selatan',
+		label: 'Sebelah Selatan',
+		value_text: 'Kabupaten Barru',
+		order_index: 2,
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
+	},
+	{
+		id: 'batas-3',
+		kategori_id: '3',
+		key: 'sebelah_barat',
+		label: 'Sebelah Barat',
+		value_text: 'Selat Makassar',
+		order_index: 3,
+		created_at: new Date('2024-01-01'),
+		updated_at: new Date('2024-01-01'),
+		admin_id: '1'
+	},
+	{
+		id: 'batas-4',
+		kategori_id: '3',
+		key: 'sebelah_timur',
+		label: 'Sebelah Timur',
+		value_text: 'Kelurahan Watang Bacukiki',
+		order_index: 4,
 		created_at: new Date('2024-01-01'),
 		updated_at: new Date('2024-01-01'),
 		admin_id: '1'
