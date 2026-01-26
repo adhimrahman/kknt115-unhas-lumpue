@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 	description: "Website resmi Kelurahan Lumpue Kota Parepare.",
 	robots: 'index, follow',
 	icons: {
-		icon: "/logo.svg"
+		icon: "/logo.png"
 	}
 };
 
