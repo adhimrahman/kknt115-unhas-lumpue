@@ -3,8 +3,23 @@ export type ProfilKategori =
     | 'sejarah'
     | 'visi-misi-sasaran'
     | 'tugas-dan-fungsi'
-    | 'potensi'
     | 'struktur-organisasi';
+
+export type PotensiKategori =
+	| 'umkm'
+	| 'pertanian'
+	| 'perikanan'
+	| 'wisata'
+	| 'kuliner'
+	| 'sdm';
+
+export type PotensiIconKey =
+	| 'Store'
+	| 'Sprout'
+	| 'Fish'
+	| 'MapPinned'
+	| 'UtensilsCrossed'
+	| 'Users';
 
 export type BeritaKategori = 'berita' | 'pengumuman';
 
@@ -69,6 +84,37 @@ export interface Kelembagaan {
     updated_at: Date;
     admin_id: string;
     admin?: Admin;
+}
+
+export interface PotensiGambar {
+	id: string;
+	potensi_id: string;
+	url: string;
+	size?: number;
+	type?: string;
+	caption?: string;
+	order_index: number;
+	created_at: Date;
+	updated_at: Date;
+	admin_id: string;
+	admin?: Admin;
+}
+
+export interface Potensi {
+	id: string;
+	kategori: PotensiKategori; // 1 kategori = 1 item
+	nama: string; // nama/judul ringkas
+	slug: string;
+	icon: PotensiIconKey;
+
+	konten: string;
+
+	created_at: Date;
+	updated_at: Date;
+	admin_id: string;
+	admin?: Admin;
+
+	galeri?: PotensiGambar[];
 }
 
 export interface Berita {
