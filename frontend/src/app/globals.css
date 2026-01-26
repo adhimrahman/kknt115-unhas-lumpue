@@ -1,7 +1,269 @@
 @import "tailwindcss";
 
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+	--steelBlue: #3561A1;
+	--darkBlue: #1c398e;
+	--lightGreen: #348563;
+	--dark-green: #0B6D44;
+	--dark-blue: #001E2B;
+	--light-blue: #21313C;
+	--turquoise: #1CA6A9;
+	--red-maroon: #8E191C;
+	--yellow-gold: #E3B025;
+
+	--radius-5xl: 2.5rem;
+	--radius-6xl: 3rem;
+	--radius-9xl: 9rem;
+
+	--height-70: 18rem;
+	--height-75: 20rem;
+	--height-80: 22rem;
+	--height-85: 24rem;
+	--height-100: 26rem;
+	--height-105: 28rem;
+	--height-128: 32rem;
+
+	--max-w-8xl: 96rem;
+	--min-w-8xl: 96rem;
+
+	--ck-content-font-family: 'Lato';
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-steelBlue: var(--steelBlue);
+	--color-darkBlue: var(--darkBlue);
+	--color-lightGreen: var(--lightGreen);
+	--color-dark-green: var(--dark-green);
+	--color-dark-blue: var(--dark-blue);
+	--color-light-blue: var(--light-blue);
+	--color-turquoise: var(--turquoise);
+	--color-red-maroon: var(--red-maroon);
+	--color-yellow-gold: var(--yellow-gold);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+
+	--radius-5xl: var(--radius-5xl);
+	--radius-6xl: var(--radius-6xl);
+	--radius-9xl: var(--radius-9xl);
+	
+	--height-70: var(--height-70);
+	--height-75: var(--height-75);
+	--height-80: var(--height-80);
+	--height-85: var(--height-85);
+	--height-100: var(--height-100);
+	--height-105: var(--height-105);
+	--height-128: var(--height-128);
+
+	--max-w-8xl: var(--max-w-8xl);
+	--min-w-8xl: var(--min-w-8xl);
+}
+
 body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: Arial, Helvetica, sans-serif;
+}
+
+.shine-text {
+	background: #fff -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #222)) 0 0 no-repeat;
+	background-size: 150px;
+	color: rgba(255, 255, 255, 0.3);
+	background-clip: text;
+	animation-name: shine-text;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes shine-text {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
+
+.shine-card {
+	--shine-deg: 45deg;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0.875rem;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	max-width: 28rem;
+
+	background-repeat: no-repeat;
+	background-position: -100% 0, 0 0;
+
+	background-image: linear-gradient(
+		var(--shine-deg),
+		transparent 20%,
+		transparent 40%,
+		rgba(0, 0, 0, 0.2) 50%,
+		rgba(0, 0, 0, 0.2) 55%,
+		transparent 70%,
+		transparent 100%
+	);
+
+	background-size: 250% 250%, 100% 100%;
+	transition: background-position 0s ease;
+}
+
+.shine-card:hover {
+	background-position: 200%0, 0 0;
+	transition-duration: 1.5s;
+}
+
+.linear-wipe {
+	text-align: center;
+	background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+	background-size: 200% auto;
+	color: #000;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+	to {
+		background-position: 200% center;
+	}
+}
+
+*:not(.custom-scrollbar)::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  	width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  	background: #064e3b;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background-color: #047857;
+	border-radius: 9999px;
+	border: 2px solid transparent;
+}
+
+/* SEMBUNYIKAN SCROLLBAR UNTUK SEMUA ELEMEN LAIN (khusus sidebar) */
+.sidebar::-webkit-scrollbar {
+	width: 0 !important;
+	height: 0 !important;
+	background: transparent;
+}
+
+.custom-scrollbar {
+	scrollbar-color: #047857 #064e3b;
+}
+
+.max-w-custom {
+	max-width: var(--max-w-8xl);
+}
+
+.main-container {
+	font-family: var(--ck-content-font-family);
+	/* width: fit-content;
+	margin-left: auto;
+	margin-right: auto; */
+	width: 100%;
+}
+
+.editor-container_classic-editor .editor-container__editor {
+	/* min-width: 795px; */
+	max-width: 100%;
+}
+
+.ck-content h3.category {
+	font-family: 'Oswald';
+	font-size: 20px;
+	font-weight: bold;
+	color: #555;
+	letter-spacing: 10px;
+	margin: 0;
+	padding: 0;
+}
+
+.ck-content h2.document-title {
+	font-family: 'Oswald';
+	font-size: 50px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.ck-content h3.document-subtitle {
+	font-family: 'Oswald';
+	font-size: 20px;
+	color: #555;
+	margin: 0 0 1em;
+	font-weight: bold;
+	padding: 0;
+}
+
+.ck-content p.info-box {
+	--background-size: 30px;
+	--background-color: #e91e63;
+	padding: 1.2em 2em;
+	border: 1px solid var(--background-color);
+	background:
+		linear-gradient(135deg, var(--background-color) 0%, var(--background-color) var(--background-size), transparent var(--background-size)),
+		linear-gradient(
+			135deg,
+			transparent calc(100% - var(--background-size)),
+			var(--background-color) calc(100% - var(--background-size)),
+			var(--background-color)
+		);
+	border-radius: 10px;
+	margin: 1.5em 2em;
+	box-shadow: 5px 5px 0 #ffe6ef;
+}
+
+.ck-content span.marker {
+	background: yellow;
+}
+
+.ck-content span.spoiler {
+	background: #000;
+	color: #000;
+}
+
+.ck-content span.spoiler:hover {
+	background: #000;
+	color: #fff;
+}
+
+.ck-content .button {
+	display: inline-block;
+	width: 260px;
+	border-radius: 8px;
+	margin: 0 auto;
+	padding: 12px;
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
+}
+
+.ck-content .button--green {
+	background-color: #406b1e;
+}
+
+.ck-content .button--black {
+	background-color: #141517;
 }
