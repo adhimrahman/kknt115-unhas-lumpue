@@ -147,10 +147,10 @@ export default function Hero({ onScrollToSambutan }: { onScrollToSambutan: () =>
             </div>
 
             {/* Scroll */}
-            <div className="absolute bottom-36 lg:bottom-28 left-1/2 -translate-x-1/2 z-40">
+            <div className="absolute bottom-36 lg:bottom-28 left-1/2 -translate-x-1/2 z-40 cursor-pointer">
                 <button
                     onClick={onScrollToSambutan}
-                    className="group p-4 bg-white/20 backdrop-blur-md rounded-full border border-white/30 hover:bg-white/30 transition-all duration-300 animate-bounce hover:animate-none"
+                    className="group p-4 bg-white/20 backdrop-blur-md rounded-full border border-white/30 hover:bg-white/30 transition-all duration-300 animate-bounce hover:animate-none cursor-pointer"
                 >
                     <ChevronDown className="w-6 h-6 text-white group-hover:translate-y-1 transition-transform duration-600" />
                 </button>
