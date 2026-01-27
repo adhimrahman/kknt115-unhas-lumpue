@@ -1,6 +1,6 @@
 export default function ProfilLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<div className="pt-16">
+		<div>
 			{children}
 		</div>
 	);
