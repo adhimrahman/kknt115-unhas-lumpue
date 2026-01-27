@@ -174,6 +174,7 @@ export interface Kontak {
     email: string;
     lokasi: string;
     jam_kerja: string;
+    instagram: string;
     created_at: Date;
     updated_at: Date;
     admin_id: string;
