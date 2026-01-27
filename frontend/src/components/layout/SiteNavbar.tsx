@@ -169,7 +169,7 @@ export default function Navbar() {
                     <div className="flex items-center space-x-4 shrink-0">
                         <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-lg p-2">
                             <Image 
-                                src="/logo.png" 
+                                src="/logos/logo.png" 
                                 alt="Logo DKP" 
                                 fill 
                                 className="object-contain"
@@ -187,7 +187,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden lg:flex items-center space-x-1">
+                    <ul className="hidden lg:flex items-center space-x-2">
                         {menuItems.map((item, index) => (
                             <li key={index} className="relative">
                                 {item.href ? (
