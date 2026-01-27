@@ -51,7 +51,7 @@ export default function BeritaPengumuman() {
 							<Link
 								key={berita.id}
 								href={`/berita/${berita.slug}`}
-								className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group"
+								className="bg-gray-150 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group border border-slate-300/50"
 							>
 								<div className="relative aspect-video overflow-hidden bg-gray-200">
 									{berita.gambar_url && (
@@ -71,7 +71,7 @@ export default function BeritaPengumuman() {
 										<span className="text-sm text-gray-500">{formatDate(berita.tanggal)}</span>
 									</div>
 
-									<h3 className="text-lg font-bold text-[#1E293B] mb-2 line-clamp-2 group-hover:text-[#4D9AE1] transition-colors">
+									<h3 className="text-lg font-bold text-[#1E293B] mb-2 line-clamp-2 group-hover:text-[#4D9AE1] transition-colors min-h-16 capitalize">
 										{berita.judul}
 									</h3>
 
@@ -118,7 +118,7 @@ export default function BeritaPengumuman() {
 											<span className="text-sm text-gray-300">{formatDate(pengumuman.tanggal)}</span>
 										</div>
                                         
-										<h3 className="text-lg font-bold mb-2 group-hover:text-[#4D9AE1] transition-colors line-clamp-2 min-h-16">
+										<h3 className="text-lg font-bold mb-2 group-hover:text-[#4D9AE1] transition-colors line-clamp-2 min-h-16 capitalize">
 											{pengumuman.judul}
 										</h3>
 
