@@ -33,17 +33,17 @@ export default function PotensiBadges() {
 							<Link
 								key={p.id}
 								href={`/profil/potensi/${p.slug}`}
-								className="group bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex items-center gap-4"
+								className="group bg-white rounded-2xl border border-slate-300/50 shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex items-center gap-4"
 							>
 								<div className="w-14 h-14 rounded-2xl bg-[#4D9AE1]/15 flex items-center justify-center shrink-0 group-hover:bg-[#4D9AE1]/20 transition">
 									<Icon className="w-7 h-7 text-[#4D9AE1]" />
 								</div>
 
 								<div className="min-w-0">
-									<p className="text-xs font-semibold text-gray-500 mb-1">
+									<p className="text-xs font-semibold text-gray-500 mb-1 capitalize">
 										{kategoriLabel(p.kategori)}
 									</p>
-									<h3 className="text-base md:text-lg font-bold text-[#1E293B] group-hover:text-[#4D9AE1] transition-colors truncate">
+									<h3 className="text-base md:text-lg font-bold text-[#1E293B] group-hover:text-[#4D9AE1] transition-colors truncate capitalize">
 										{p.nama}
 									</h3>
 								</div>
