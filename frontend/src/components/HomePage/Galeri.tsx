@@ -55,7 +55,7 @@ export default function GaleriPage() {
 
 							<div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 								<div className="absolute bottom-0 left-0 right-0 p-4">
-									<h3 className="text-white font-bold text-sm mb-2 line-clamp-2 tracking-wide">
+									<h3 className="text-white font-bold text-sm mb-2 line-clamp-2 tracking-wide capitalize">
 										{item.judul}
 									</h3>
 									<p className="text-white/80 text-xs line-clamp-2 mb-2">{item.deskripsi}</p>
