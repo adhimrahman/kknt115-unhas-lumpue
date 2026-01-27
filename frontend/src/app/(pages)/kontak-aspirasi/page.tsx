@@ -1,5 +1,5 @@
+import KontakAspirasiClient from "@/components/KontakAspirasi/KontakAspirasiClient";
+
 export default function KontakAspirasiPage() {
-	return (
-		<h1>Halaman Kontak dan Aspirasi</h1>
-	);
+	return <KontakAspirasiClient />;
 }
