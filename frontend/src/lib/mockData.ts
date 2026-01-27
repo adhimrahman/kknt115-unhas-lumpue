@@ -353,20 +353,35 @@ export const mockBerita: Berita[] = [
 		created_at: new Date('2024-02-12'),
 		updated_at: new Date('2024-02-12'),
 		admin_id: '1'
-	}
+	},
+	{
+		id: '11',
+		judul: 'Kocak',
+		konten: 'Warga dapat menyetor sampah anorganik terpilah untuk ditimbang dan dicatat sebagai tabungan. Jadwal setor rutin diumumkan berkala.',
+		gambar_url: 'https://picsum.photos/800/600?random=17',
+		gambar_size: 172000,
+		gambar_type: 'image/jpeg',
+		tanggal: new Date('2024-02-10'),
+		penulis: 'Admin',
+		kategori: 'berita',
+		slug: 'kocak',
+		created_at: new Date('2024-02-10'),
+		updated_at: new Date('2024-02-10'),
+		admin_id: '1'
+	},
 ];
 
 export const mockUMKM: UMKM[] = [
 	{
 		id: '1',
-		nama: 'Warung Kopi Sederhana',
-		owner: 'Budi Santoso',
-		deskripsi: 'Warung kopi dengan berbagai varian kopi nusantara',
-		alamat: 'Jl. Merdeka No. 123',
-		kontak: '081234567890',
+		nama: 'Posko KKNT Gel. 115 Universitas Hasanuddin Lumpue',
+		owner: 'adhim rahman',
+		deskripsi: 'kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang kanjul ome imang paok kocak gimang',
+		alamat: 'Jl. S. Abdul Rasyid No. 12A',
+		kontak: '082269257873',
 		instagram: '@warungkopisederhana',
-		whatsapp: '6281234567890',
-		lokasi: '-6.200000, 106.816666',
+		whatsapp: '6282269257873',
+		lokasi: '-4.0571608, 119.6249339',
 		gambar_url: 'https://picsum.photos/800/600?random=6',
 		gambar_size: 190000,
 		gambar_type: 'image/jpeg',
