@@ -584,6 +584,7 @@ export const mockKontak: Kontak = {
 	email: 'info@instansi.go.id',
 	lokasi: '-6.200000, 106.816666',
 	jam_kerja: 'Senin - Jumat: 08.00 - 16.00 WIB',
+	instagram: 'https://instagram.com/adhimrahmann',
 	created_at: new Date('2024-01-01'),
 	updated_at: new Date('2024-01-25'),
 	admin_id: '1'
