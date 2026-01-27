@@ -1,4 +1,3 @@
-// src/components/HomePage/KKNTributeSection.tsx
 import Image from "next/image";
 
 type KKNPhoto = {
@@ -89,9 +88,8 @@ export default function KKNTributeSection() {
 							di Kelurahan Lumpue, Kecamatan Bacukiki Barat, Kota Parepare.
 						</p>
 
-                        <p className="text-sm text-slate-500 mt-24 text-justify tracking-wide leading-relaxed">
-                            Dedikasi kecil untuk pengabdian dan digitalisasi desa—agar informasi
-								kelurahan lebih mudah diakses, transparan, dan bermanfaat.
+                        <p className="text-sm text-slate-500 mt-12 text-justify tracking-wider leading-relaxed">
+                            Website ini dikembangkan sebagai bagian dari kegiatan Kuliah Kerja Nyata (KKN) Tematik Inovasi Daerah Universitas Hasanuddin Gelombang 115 yang dilaksanakan di Kelurahan Lumpue, Kecamatan Bacukiki Barat, Kota Parepare. Website ini menjadi wujud kontribusi mahasiswa dalam mendukung proses digitalisasi kelurahan, khususnya dalam penyediaan informasi pemerintahan, dokumentasi kegiatan, serta penyampaian informasi publik kepada masyarakat. Kehadiran website ini diharapkan dapat mempermudah akses informasi secara cepat dan akurat, meningkatkan transparansi, serta memperkuat komunikasi antara pemerintah kelurahan dan masyarakat.
                         </p>
 					</div>
 				</div>
