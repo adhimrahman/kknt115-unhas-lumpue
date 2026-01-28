@@ -15,7 +15,7 @@ export default function Hero({ onScrollToSambutan }: { onScrollToSambutan: () =>
 
     const heroTexts = [
         'Selamat Datang di Situs Resmi Kelurahan Lumpue',
-        'Kecamatan Bacukiki, Barat Kota Parepare',
+        'Kecamatan Bacukiki Barat Kota Parepare',
     ];
 
     useEffect(() => {
