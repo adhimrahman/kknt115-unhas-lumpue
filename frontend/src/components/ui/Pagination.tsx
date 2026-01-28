@@ -60,7 +60,7 @@ export default function Pagination({
 						<>
 							Menampilkan <span className="font-semibold text-slate-900">{startItem}</span> -{" "}
 							<span className="font-semibold text-slate-900">{endItem}</span> dari{" "}
-							<span className="font-semibold text-[#4D9AE1]">{totalItems}</span> foto
+							<span className="font-semibold text-[#4D9AE1]">{totalItems}</span> Item
 						</>
 					)}
 				</div>
