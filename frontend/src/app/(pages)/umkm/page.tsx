@@ -7,6 +7,9 @@ import { MapPin, Phone, Search, Store, User } from "lucide-react";
 import type { UMKM } from "@/types";
 import { mockUMKM } from "@/lib/mockData";
 import HeroSection from "@/components/layout/HeroSection";
+import Pagination from "@/components/ui/Pagination";
+
+const ITEMS_PER_PAGE = 15;
 
 function normalize(str: string): string {
 	return str.trim().toLowerCase();
@@ -91,6 +94,12 @@ const UmkmCard = ({ item }: { item: UMKM }) => {
 
 export default function UMKMListPage() {
 	const [searchQuery, setSearchQuery] = useState("");
+	const [currentPage, setCurrentPage] = useState(1);
+
+	const handleSearchChange = (value: string) => {
+		setSearchQuery(value);
+		setCurrentPage(1);
+	};
 
 	const sorted = useMemo(() => {
 		return [...mockUMKM].sort((a, b) => (a.nama > b.nama ? 1 : -1));
@@ -112,10 +121,16 @@ export default function UMKMListPage() {
 					item.whatsapp ?? ""
 				].join(" ")
 			);
-
 			return hay.includes(q);
 		});
 	}, [sorted, searchQuery]);
+
+	const totalItems = filtered.length;
+	const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+	const safePage = Math.min(Math.max(currentPage, 1), Math.max(totalPages, 1));
+	const startIndex = (safePage - 1) * ITEMS_PER_PAGE;
+	const endIndex = startIndex + ITEMS_PER_PAGE;
+	const currentItems = filtered.slice(startIndex, endIndex);
 
 	return (
 		<div className="min-h-screen bg-linear-to-b from-slate-50 to-white">
@@ -125,7 +140,8 @@ export default function UMKMListPage() {
 				description="Temukan UMKM lokal, profil singkat, kontak, dan lokasi usaha."
 				footerText={
 					<>
-						Menampilkan <span className="font-semibold text-white">{filtered.length}</span> UMKM.
+						Menampilkan{" "}
+						<span className="font-semibold text-white">{totalItems}</span> UMKM.
 					</>
 				}
 			>
@@ -135,34 +151,50 @@ export default function UMKMListPage() {
 						type="text"
 						placeholder="Cari UMKM, owner, alamat, atau kontak..."
 						value={searchQuery}
-						onChange={(e) => setSearchQuery(e.target.value)}
+						onChange={(e) => handleSearchChange(e.target.value)}
 						className="w-full pl-12 pr-4 py-3.5 bg-white rounded-xl border-2 border-transparent focus:border-[#4D9AE1] focus:outline-none transition-colors text-slate-900 placeholder:text-slate-400"
 					/>
 				</div>
 			</HeroSection>
 
-			{/* Content */}
 			<section className="py-14 bg-slate-50">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					{filtered.length > 0 ? (
-						<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-							{filtered.map((item) => (
-								<UmkmCard key={item.id} item={item} />
-							))}
-						</div>
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+					{totalItems > 0 ? (
+						<>
+							<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+								{currentItems.map((item) => (
+									<UmkmCard key={item.id} item={item} />
+								))}
+							</div>
+
+							<Pagination
+								currentPage={safePage}
+								totalPages={totalPages}
+								totalItems={totalItems}
+								itemsPerPage={ITEMS_PER_PAGE}
+								onPageChange={(page) => {
+									setCurrentPage(page);
+									window.scrollTo({ top: 0, behavior: "smooth" });
+								}}
+							/>
+						</>
 					) : (
 						<div className="text-center py-20">
 							<div className="w-24 h-24 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-6">
 								<Search className="w-12 h-12 text-slate-500" />
 							</div>
-							<h3 className="text-2xl font-bold text-slate-900 mb-2">Tidak Ada Hasil</h3>
+							<h3 className="text-2xl font-bold text-slate-900 mb-2">
+								Tidak Ada Hasil
+							</h3>
 							<p className="text-slate-600 mb-6">
 								Tidak ditemukan UMKM dengan kata kunci{" "}
-								<span className="font-semibold">&quot;{searchQuery.trim()}&quot;</span>
+								<span className="font-semibold">
+									&quot;{searchQuery.trim()}&quot;
+								</span>
 							</p>
 							<button
-								onClick={() => setSearchQuery("")}
-								className="px-6 py-3 bg-[#4D9AE1] text-white rounded-2xl font-semibold hover:brightness-95 transition cursor-pointer"
+								onClick={() => handleSearchChange("")}
+								className="px-6 py-3 bg-[#4D9AE1] text-white rounded-2xl font-semibold hover:brightness-95 transition"
 							>
 								Reset Pencarian
 							</button>
