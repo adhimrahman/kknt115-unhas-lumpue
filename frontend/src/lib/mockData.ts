@@ -37,6 +37,30 @@ export const mockProfil: Profil[] = [
 		updated_at: new Date('2024-01-03'),
 		admin_id: '1'
 	},
+	{
+		id: "4",
+		judul: "Tugas dan Fungsi",
+		konten: "Tugas kelurahan meliputi...\nFungsi kelurahan meliputi...",
+		gambar_url: "https://picsum.photos/800/600?random=4",
+		gambar_size: 160000,
+		gambar_type: "image/jpeg",
+		kategori: "tugas-dan-fungsi",
+		created_at: new Date("2024-01-04"),
+		updated_at: new Date("2024-01-04"),
+		admin_id: "1"
+	},
+	{
+		id: "5",
+		judul: "Struktur Organisasi",
+		konten: "Struktur organisasi kelurahan terdiri dari...\n(Lurah, Sekretaris, Kasi, dll)",
+		gambar_url: "https://picsum.photos/800/600?random=5",
+		gambar_size: 160000,
+		gambar_type: "image/jpeg",
+		kategori: "struktur-organisasi",
+		created_at: new Date("2024-01-05"),
+		updated_at: new Date("2024-01-05"),
+		admin_id: "1"
+	}
 ];
 
 export const mockProfilPejabat: ProfilPejabat[] = [
@@ -617,150 +641,482 @@ export const mockAspirasi: Aspirasi[] = [
 
 export const mockStatistikKategori: StatistikKategori[] = [
 	{
-		id: '1',
-		nama: 'BPS 2024',
+		id: "sk-1",
+		nama: "BPS 2024",
 		tahun: 2024,
-		sumber: 'Badan Pusat Statistik',
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		sumber: "BPS",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: '2',
-		nama: 'Data Umum',
+		id: "sk-2",
+		nama: "Data Umum",
 		tahun: 2024,
-		sumber: 'Internal',
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		sumber: "Kelurahan Lumpue",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: '3',
-		nama: 'Batas Wilayah',
+		id: "sk-3",
+		nama: "Orbitasi",
 		tahun: 2024,
-		sumber: 'Internal',
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		sumber: "Kelurahan Lumpue",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "sk-4",
+		nama: "Data Personil",
+		tahun: 2024,
+		sumber: "Kelurahan Lumpue",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	}
 ];
 
 export const mockStatistikItem: StatistikItem[] = [
+	// =========================
+	// BPS 2024 (Penduduk)
+	// =========================
 	{
-		id: 'bps-1',
-		kategori_id: '1',
-		key: 'jumlah_penduduk',
-		label: 'Jumlah Penduduk',
-		value_number: 2500000,
-		unit: 'jiwa',
+		id: "si-1",
+		kategori_id: "sk-1",
+		key: "total_penduduk",
+		label: "Total Penduduk",
+		value_number: 10164,
+		unit: "jiwa",
 		order_index: 1,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: 'bps-2',
-		kategori_id: '1',
-		key: 'luas_wilayah',
-		label: 'Luas Wilayah',
-		value_number: 150.5,
-		unit: 'km²',
+		id: "si-2",
+		kategori_id: "sk-1",
+		key: "jumlah_keluarga",
+		label: "Jumlah Keluarga",
+		value_number: 3122,
+		unit: "KK",
 		order_index: 2,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: 'umum-1',
-		kategori_id: '2',
-		key: 'luas_wilayah',
-		label: 'Luas Wilayah',
+		id: "si-3",
+		kategori_id: "sk-1",
+		key: "jumlah_keluarga_pertanian",
+		label: "Jumlah Keluarga Pertanian",
+		value_number: 503,
+		unit: "KK",
+		order_index: 3,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-4",
+		kategori_id: "sk-1",
+		key: "penduduk_laki_laki_persen",
+		label: "Penduduk Laki-laki",
+		value_number: 49,
+		unit: "%",
+		order_index: 4,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-5",
+		kategori_id: "sk-1",
+		key: "penduduk_perempuan_persen",
+		label: "Penduduk Perempuan",
+		value_number: 51,
+		unit: "%",
+		order_index: 5,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+
+	// =========================
+	// BPS 2024 (Sarana Pendidikan)
+	// =========================
+	{
+		id: "si-10",
+		kategori_id: "sk-1",
+		key: "pendidikan_tk",
+		label: "Jumlah Sarana Pendidikan - TK",
+		value_number: 6,
+		unit: "unit",
+		order_index: 10,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-11",
+		kategori_id: "sk-1",
+		key: "pendidikan_sd",
+		label: "Jumlah Sarana Pendidikan - SD",
+		value_number: 6,
+		unit: "unit",
+		order_index: 11,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-12",
+		kategori_id: "sk-1",
+		key: "pendidikan_smp",
+		label: "Jumlah Sarana Pendidikan - SMP",
+		value_number: 2,
+		unit: "unit",
+		order_index: 12,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-13",
+		kategori_id: "sk-1",
+		key: "pendidikan_sma",
+		label: "Jumlah Sarana Pendidikan - SMA",
+		value_number: 1,
+		unit: "unit",
+		order_index: 13,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+
+	// =========================
+	// BPS 2024 (Sarana Ekonomi)
+	// =========================
+	{
+		id: "si-20",
+		kategori_id: "sk-1",
+		key: "ekonomi_minimarket",
+		label: "Jumlah Sarana Ekonomi - Minimarket",
+		value_number: 5,
+		unit: "unit",
+		order_index: 20,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-21",
+		kategori_id: "sk-1",
+		key: "ekonomi_restoran",
+		label: "Jumlah Sarana Ekonomi - Restoran",
+		value_number: 5,
+		unit: "unit",
+		order_index: 21,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-22",
+		kategori_id: "sk-1",
+		key: "ekonomi_hotel",
+		label: "Jumlah Sarana Ekonomi - Hotel",
+		value_number: 2,
+		unit: "unit",
+		order_index: 22,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-23",
+		kategori_id: "sk-1",
+		key: "ekonomi_penginapan",
+		label: "Jumlah Sarana Ekonomi - Penginapan",
+		value_number: 1,
+		unit: "unit",
+		order_index: 23,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-24",
+		kategori_id: "sk-1",
+		key: "ekonomi_kedai_makanan",
+		label: "Jumlah Sarana Ekonomi - Kedai Makanan",
+		value_number: 15,
+		unit: "unit",
+		order_index: 24,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-25",
+		kategori_id: "sk-1",
+		key: "ekonomi_toko_kelontong",
+		label: "Jumlah Sarana Ekonomi - Toko Kelontong",
+		value_number: 230,
+		unit: "unit",
+		order_index: 25,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+
+	// =========================
+	// BPS 2024 (Industri Mikro Kecil)
+	// =========================
+	{
+		id: "si-30",
+		kategori_id: "sk-1",
+		key: "imk_furnitur",
+		label: "Industri Mikro Kecil - Furnitur",
+		value_number: 5,
+		unit: "unit",
+		order_index: 30,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-31",
+		kategori_id: "sk-1",
+		key: "imk_logam",
+		label: "Industri Mikro Kecil - Logam",
+		value_number: 8,
+		unit: "unit",
+		order_index: 31,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-32",
+		kategori_id: "sk-1",
+		key: "imk_kayu_rotan",
+		label: "Industri Mikro Kecil - Kayu/Rotan",
+		value_number: 3,
+		unit: "unit",
+		order_index: 32,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-33",
+		kategori_id: "sk-1",
+		key: "imk_makanan",
+		label: "Industri Mikro Kecil - Makanan",
+		value_number: 27,
+		unit: "unit",
+		order_index: 33,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-34",
+		kategori_id: "sk-1",
+		key: "imk_pakaian_jadi",
+		label: "Industri Mikro Kecil - Pakaian Jadi",
+		value_number: 10,
+		unit: "unit",
+		order_index: 34,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-35",
+		kategori_id: "sk-1",
+		key: "imk_minuman",
+		label: "Industri Mikro Kecil - Minuman",
+		value_number: 6,
+		unit: "unit",
+		order_index: 35,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+
+	// =========================
+	// Data Umum
+	// =========================
+	{
+		id: "si-100",
+		kategori_id: "sk-2",
+		key: "tipologi_kelurahan",
+		label: "Tipologi Kelurahan",
+		value_text: "Pesisir / Nelayan",
+		order_index: 1,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-101",
+		kategori_id: "sk-2",
+		key: "luas_wilayah",
+		label: "Luas Wilayah",
 		value_number: 488,
-		unit: 'km²',
-		order_index: 1,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
-	},
-	{
-		id: 'umum-2',
-		kategori_id: '2',
-		key: 'jumlah_penduduk',
-		label: 'Jumlah Penduduk',
-		value_number: 10146,
-		unit: 'jiwa',
+		unit: "km²",
 		order_index: 2,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: 'umum-3',
-		kategori_id: '2',
-		key: 'jumlah_rt',
-		label: 'Jumlah RT',
+		id: "si-102",
+		kategori_id: "sk-2",
+		key: "batas_utara",
+		label: "Batas Wilayah - Utara",
+		value_text: "Kelurahan Sumpang Minangae",
+		order_index: 10,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-103",
+		kategori_id: "sk-2",
+		key: "batas_selatan",
+		label: "Batas Wilayah - Selatan",
+		value_text: "Kabupaten Barru",
+		order_index: 11,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-104",
+		kategori_id: "sk-2",
+		key: "batas_barat",
+		label: "Batas Wilayah - Barat",
+		value_text: "Selat Makassar",
+		order_index: 12,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-105",
+		kategori_id: "sk-2",
+		key: "batas_timur",
+		label: "Batas Wilayah - Timur",
+		value_text: "Kelurahan Watang Bacukiki",
+		order_index: 13,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-106",
+		kategori_id: "sk-2",
+		key: "mayoritas_pekerjaan",
+		label: "Mayoritas Pekerjaan",
+		value_text: "Wiraswasta",
+		order_index: 20,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+	{
+		id: "si-107",
+		kategori_id: "sk-2",
+		key: "jumlah_rt",
+		label: "Jumlah RT",
 		value_number: 19,
-		unit: 'RT',
+		unit: "RT",
 		order_index: 3,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: 'umum-4',
-		kategori_id: '2',
-		key: 'jumlah_rw',
-		label: 'Jumlah RW',
+		id: "si-108",
+		kategori_id: "sk-2",
+		key: "jumlah_rw",
+		label: "Jumlah RW",
 		value_number: 9,
-		unit: 'RW',
+		unit: "RW",
 		order_index: 4,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
+
+	// =========================
+	// Orbitasi
+	// =========================
 	{
-		id: 'batas-1',
-		kategori_id: '3',
-		key: 'sebelah_utara',
-		label: 'Sebelah Utara',
-		value_text: 'Kelurahan Sumpang Minangae',
+		id: "si-200",
+		kategori_id: "sk-3",
+		key: "jarak_kecamatan",
+		label: "Jarak dari Pusat Pemerintahan Kecamatan",
+		value_number: 2,
+		unit: "km",
 		order_index: 1,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: 'batas-2',
-		kategori_id: '3',
-		key: 'sebelah_selatan',
-		label: 'Sebelah Selatan',
-		value_text: 'Kabupaten Barru',
+		id: "si-201",
+		kategori_id: "sk-3",
+		key: "jarak_kota",
+		label: "Jarak dari Pusat Pemerintahan Kota",
+		value_number: 4,
+		unit: "km",
 		order_index: 2,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: 'batas-3',
-		kategori_id: '3',
-		key: 'sebelah_barat',
-		label: 'Sebelah Barat',
-		value_text: 'Selat Makassar',
+		id: "si-202",
+		kategori_id: "sk-3",
+		key: "jarak_provinsi",
+		label: "Jarak dari Ibukota Provinsi",
+		value_number: 146,
+		unit: "km",
 		order_index: 3,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
+	},
+
+	// =========================
+	// Data Personil
+	// =========================
+	{
+		id: "si-300",
+		kategori_id: "sk-4",
+		key: "nama_lurah",
+		label: "Nama Lurah",
+		value_text: "-",
+		order_index: 1,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	},
 	{
-		id: 'batas-4',
-		kategori_id: '3',
-		key: 'sebelah_timur',
-		label: 'Sebelah Timur',
-		value_text: 'Kelurahan Watang Bacukiki',
-		order_index: 4,
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		id: "si-301",
+		kategori_id: "sk-4",
+		key: "nama_sekretaris",
+		label: "Nama Sekretaris Kelurahan",
+		value_text: "-",
+		order_index: 2,
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "admin-1"
 	}
 ];
 
