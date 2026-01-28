@@ -70,7 +70,7 @@ export default function Pagination({
 						onClick={() => onPageChange(currentPage - 1)}
 						disabled={currentPage === 1}
 						className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200
-							${currentPage === 1 ? "bg-slate-100 text-slate-400 cursor-not-allowed" : "bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 hover:shadow-md"}`}
+							${currentPage === 1 ? "bg-slate-100 text-slate-400 cursor-not-allowed" : "bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 hover:shadow-md cursor-pointer"}`}
 					>
 						<span>←</span>
 						<span className="hidden sm:inline">Sebelumnya</span>
@@ -91,7 +91,7 @@ export default function Pagination({
 									key={page}
 									onClick={() => onPageChange(page)}
 									className={`w-10 h-10 rounded-xl text-sm font-semibold transition-all duration-200
-										${currentPage === page ? "bg-[#4D9AE1] text-white shadow-sm scale-105" : "bg-white border border-slate-300 text-slate-700 hover:bg-blue-50 hover:border-blue-200 hover:text-[#4D9AE1]"}`}
+										${currentPage === page ? "bg-[#4D9AE1] text-white shadow-sm scale-105 cursor-not-allowed" : "bg-white border border-slate-300 text-slate-700 hover:bg-blue-50 hover:border-blue-200 hover:text-[#4D9AE1] cursor-pointer"}`}
 								>
 									{page}
 								</button>
@@ -102,8 +102,8 @@ export default function Pagination({
 					<button
 						onClick={() => onPageChange(currentPage + 1)}
 						disabled={currentPage === displayTotalPages || displayTotalPages <= 1}
-						className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200
-							${currentPage === displayTotalPages || displayTotalPages <= 1 ? "bg-slate-100 text-slate-400 cursor-not-allowed" : "bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 hover:shadow-md"}`}
+						className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 curp
+							${currentPage === displayTotalPages || displayTotalPages <= 1 ? "bg-slate-100 text-slate-400 cursor-not-allowed" : "bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 hover:shadow-md cursor-pointer"}`}
 					>
 						<span className="hidden sm:inline">Selanjutnya</span>
 						<span>→</span>
