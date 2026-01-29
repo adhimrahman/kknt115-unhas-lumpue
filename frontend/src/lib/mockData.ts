@@ -106,16 +106,154 @@ export const mockProfilPejabat: ProfilPejabat[] = [
 
 export const mockKelembagaan: Kelembagaan[] = [
 	{
-		id: '1',
-		judul: 'Struktur Organisasi',
-		konten: 'Struktur organisasi kami terdiri dari beberapa bidang...',
-		gambar_url: 'https://picsum.photos/1000/800?random=10',
-		gambar_size: 200000,
-		gambar_type: 'image/jpeg',
-		kategori: 'struktur',
-		created_at: new Date('2024-01-01'),
-		updated_at: new Date('2024-01-01'),
-		admin_id: '1'
+		id: "1",
+		judul: "Lembaga Pemberdayaan Masyarakat Kelurahan (LPMK)",
+		konten: `
+			LPMK merupakan lembaga kemasyarakatan yang berperan sebagai mitra kerja kelurahan
+			dalam perencanaan, pelaksanaan, dan pengawasan pembangunan berbasis masyarakat.
+
+			**Tugas LPMK antara lain:**
+			- Menampung dan menyalurkan aspirasi masyarakat
+			- Menggerakkan partisipasi masyarakat
+			- Mengawal program pembangunan kelurahan
+		`,
+		kategori: "lpmk",
+		gambar_url: "https://picsum.photos/1200/800?random=11",
+		gambar_size: 240000,
+		gambar_type: "image/jpeg",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "1"
+	},
+	{
+		id: "2",
+		judul: "Karang Taruna",
+		konten: `
+			Karang Taruna adalah organisasi kepemudaan yang menjadi wadah pembinaan generasi muda
+			dalam bidang sosial, ekonomi, dan kreativitas.
+
+			**Fokus kegiatan:**
+			- Kepemudaan & olahraga
+			- Kegiatan sosial kemasyarakatan
+			- Pemberdayaan ekonomi kreatif pemuda
+		`,
+		kategori: "karang-taruna",
+		gambar_url: "https://picsum.photos/1200/800?random=12",
+		gambar_size: 220000,
+		gambar_type: "image/jpeg",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "1"
+	},
+	{
+		id: "3",
+		judul: "Pemberdayaan Kesejahteraan Keluarga (PKK)",
+		konten: `
+			PKK merupakan lembaga yang berfokus pada peningkatan kesejahteraan keluarga
+			melalui 10 Program Pokok PKK.
+
+			**Bidang utama:**
+			- Kesehatan keluarga
+			- Pendidikan dan keterampilan
+			- Ketahanan pangan keluarga
+		`,
+		kategori: "pkk",
+		gambar_url: "https://picsum.photos/1200/800?random=13",
+		gambar_size: 230000,
+		gambar_type: "image/jpeg",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "1"
+	},
+	{
+		id: "4",
+		judul: "Rukun Tetangga (RT)",
+		konten: `
+			RT merupakan unit organisasi kemasyarakatan paling dasar yang berperan
+			dalam pelayanan administrasi dan koordinasi warga di tingkat lingkungan.
+
+			**Peran RT:**
+			- Pendataan penduduk
+			- Pelayanan administrasi warga
+			- Koordinasi kegiatan lingkungan
+		`,
+		kategori: "rt",
+		gambar_url: "https://picsum.photos/1200/800?random=14",
+		gambar_size: 210000,
+		gambar_type: "image/jpeg",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "1"
+	},
+	{
+		id: "5",
+		judul: "Rukun Warga (RW)",
+		konten: `
+			RW berfungsi sebagai penghubung antara RT dan pihak kelurahan
+			dalam koordinasi pelayanan dan pembangunan lingkungan.
+
+			**Tugas RW:**
+			- Koordinasi antar RT
+			- Penyampaian kebijakan kelurahan
+			- Pembinaan kegiatan masyarakat
+		`,
+		kategori: "rw",
+		gambar_url: "https://picsum.photos/1200/800?random=15",
+		gambar_size: 215000,
+		gambar_type: "image/jpeg",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "1"
+	},
+	{
+		id: "6",
+		judul: "Pos Pelayanan Terpadu (Posyandu)",
+		konten: `
+			Posyandu merupakan layanan kesehatan berbasis masyarakat
+			yang berfokus pada ibu dan anak.
+
+			**Layanan utama:**
+			- Penimbangan balita
+			- Imunisasi
+			- Edukasi gizi dan kesehatan
+		`,
+		kategori: "posyandu",
+		gambar_url: "https://picsum.photos/1200/800?random=16",
+		gambar_size: 225000,
+		gambar_type: "image/jpeg",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "1"
+	},
+	{
+		id: "7",
+		judul: "Lembaga Adat",
+		konten: `
+			Lembaga Adat merupakan lembaga kemasyarakatan yang berperan dalam menjaga,
+			melestarikan, dan mengembangkan nilai-nilai adat, budaya, serta kearifan lokal
+			yang hidup dan berkembang di tengah masyarakat kelurahan.
+
+			Lembaga ini menjadi wadah musyawarah adat serta mitra pemerintah kelurahan
+			dalam penyelesaian persoalan sosial berbasis nilai-nilai budaya setempat.
+
+			**Peran dan fungsi Lembaga Adat:**
+			- Melestarikan adat istiadat dan budaya lokal
+			- Menjadi mediator dalam penyelesaian sengketa adat
+			- Memberikan pertimbangan adat dalam kebijakan kemasyarakatan
+			- Membina generasi muda agar memahami nilai budaya daerah
+
+			**Ruang lingkup kegiatan:**
+			- Upacara dan kegiatan adat
+			- Edukasi budaya dan sejarah lokal
+			- Pembinaan norma sosial berbasis adat
+		`,
+		kategori: "lembaga-adat",
+		gambar_url: "https://picsum.photos/1200/800?random=17",
+		gambar_size: 235000,
+		gambar_type: "image/jpeg",
+		created_at: new Date("2024-01-01"),
+		updated_at: new Date("2024-01-01"),
+		admin_id: "1"
 	}
 ];
 
