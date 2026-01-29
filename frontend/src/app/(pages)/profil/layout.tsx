@@ -10,7 +10,10 @@ export default function ProfilLayout({ children }: { children: ReactNode }) {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 	const pathname = usePathname();
 
-	const hideSidebar = pathname === "/profil";
+	const hideSidebar = 
+		pathname === "/profil" || 
+		pathname === "/profil/kelembagaan/" ||
+		pathname.startsWith("/profil/kelembagaan/")
 
 	return (
 		<div className="min-h-screen flex-col bg-slate-50">
