@@ -76,7 +76,14 @@ export interface Kelembagaan {
     id: string;
     judul: string;
     konten: string;
-    kategori?: string;
+    kategori: 
+        | "lpmk"
+        | "karang-taruna"
+        | "pkk"
+        | "rt"
+        | "rw"
+        | "lembaga-adat"
+        | "posyandu";
     gambar_url?: string;
     gambar_size?: number;
     gambar_type?: string;
